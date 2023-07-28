@@ -12,12 +12,12 @@
 
         <menu>
             <item
-                android:id="@+id/zoom_in"
+                android:id="@+id/zoom_out"
                 android:title="@string/zoom_out"
                 android:icon="@drawable/minus"
                 app:showAsAction="ifRoom" />
 
-            <item android:id="@+id/zoom_out"
+            <item android:id="@+id/zoom_in"
                 android:icon="@drawable/plus"
                 android:title="@string/zoom_in"
                 app:showAsAction="ifRoom"/>

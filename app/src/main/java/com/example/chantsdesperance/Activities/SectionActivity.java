@@ -9,10 +9,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.ImageButton;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
@@ -67,8 +63,8 @@ public class SectionActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Chants D'Esperance");
 
 
-         switchCompat = (SwitchCompat) findViewById(R.id.myswitch);
-         switchCompat.setOnClickListener(new View.OnClickListener() {
+        switchCompat = (SwitchCompat) findViewById(R.id.myswitch);
+        switchCompat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean checked = ((SwitchCompat) v).isChecked();
@@ -148,7 +144,7 @@ public class SectionActivity extends AppCompatActivity {
         // Handles the selected menu item based on its ID
         //    - "send_feedback": Starts an email intent for sending feedback
         //    - "share": Starts a share intent for sharing the app's Play Store link
-        //    - "dark_light": Toggles the app's theme between light and dark modes
+        //    - "about": Shows information about the app, including version and developers
         //    - "exit": Finishes the activity and closes the app
 
         switch (item.getItemId()) {
@@ -167,9 +163,10 @@ public class SectionActivity extends AppCompatActivity {
                         "https://play.google.com/store/apps/details?id=" + getPackageName();
                 shareIntent.putExtra(Intent.EXTRA_TEXT, address);
                 startActivity(Intent.createChooser(shareIntent, "Share App"));
+                return true;
 
             case  R.id.about:
-                // Show the "About" dialog
+                // Show the "About" dialog with app information
                 showAboutDialog();
                 return true;
 
